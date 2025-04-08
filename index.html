@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Callback PagBank</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    code { background: #eee; padding: 0.5rem; display: block; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Redirecionamento recebido do PagBank</h1>
+  <p>O código de autorização é:</p>
+  <code id="code">Carregando...</code>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    document.getElementById("code").innerText = code || "Nenhum código recebido.";
+  </script>
+</body>
+</html>
